@@ -32,7 +32,7 @@
         <a class="b-header__nav-item-a_about-me" href="#TODO">About Me</a>
       </li>
       <li class="b-header__nav-item">
-        <a class="b-header__nav-item-a_the-work" href="#b-the-work">The Work</a>
+        <a class="b-header__nav-item-a_the-work" href="#b-work">The Work</a>
       </li>
       <li class="b-header__nav-item">
         <a class="b-header__nav-item-a_home" href="#">Home</a>
@@ -41,7 +41,7 @@
         <a class="b-header__nav-item-a_contact" href="#b-contact">Talk to Me</a>
       </li>
       <li class="b-header__nav-item">
-        <a class="b-header__nav-item-a_for-fun" href="#TODO">For Fun</a>
+        <a class="b-header__nav-item-a_for-fun" href="#b-blog">For Fun</a>
       </li>
       {block:HasPages}{block:Pages}<li class="b-header__nav-item"><a class="b-header__nav-item-a" href="{URL}">{Label}</a></li>{/block:Pages}{/block:HasPages}
       <!-- <li><a href="/archive">{lang:Archive}</a></li> -->
@@ -69,52 +69,52 @@
     </div>
     {/block:TagPage}
 
-    <div id="b-the-work">
+    <div id="b-work">
       {block:Posts}
-      <article class="b-the-work__post {TagsAsClasses}">
+      <article class="b-work__post {TagsAsClasses}">
         {block:Date}
         {block:NewDayDate}<p>{DayOfWeek}, {Month} {DayOfMonth}, {Year}</p>{/block:NewDayDate}
         {block:SameDayDate}<p>{DayOfWeek}, {Month} {DayOfMonth}, {Year}</p>{/block:SameDayDate}
         {/block:Date}
         {block:Text}
-        <div class="b-the-work__post-text">
+        <div class="b-work__post-text">
           {block:Title}<h3>{Title}</h3>{/block:Title}
           {Body}
         </div>
         {/block:Text}
         {block:Quote}
-        <div class="b-the-work__post-quote">
+        <div class="b-work__post-quote">
           <blockquote class="words {Length}">&#8220;{Quote}&#8221;</blockquote>
           {block:Source}<p class="source">&mdash; {Source}</p>{/block:Source}
         </div>
         {/block:Quote}
         {block:Link}
-        <div class="b-the-work__post-link">
+        <div class="b-work__post-link">
           <h3><a href="{URL}" {Target}>{Name}</a></h3>
           {block:Description}<div class="caption">{Description}</div>{/block:Description}
         </div>
         {/block:Link}
         {block:Video}
-        <div class="b-the-work__post-video">
+        <div class="b-work__post-video">
           {Video-500}
           {block:Caption}<div class="caption">{Caption}</div>{/block:Caption}
         </div>
         {/block:Video}
         {block:Audio}
-        <div class="b-the-work__post-audio">
+        <div class="b-work__post-audio">
           {block:AlbumArt}<img src="{AlbumArtURL}" alt="">{/block:AlbumArt}
           {AudioPlayerBlack}
           {block:Caption}<div class="caption">{Caption}</div>{/block:Caption}
         </div>
         {/block:Audio}
         {block:Photo}
-        <div class="b-the-work__post-photo">
+        <div class="b-work__post-photo">
             {LinkOpenTag}<img src="{PhotoURL-HighRes}" alt="{PhotoAlt}"/>{LinkCloseTag}
             {block:Caption}<div class="caption">{Caption}</div>{/block:Caption}
         </div>
         {/block:Photo}
         {block:Photoset}
-        <div class="b-the-work__post-photoset">
+        <div class="b-work__post-photoset">
           {block:Photos}
             <img src="{PhotoURL-HighRes}" alt="{PhotoAlt}"/>
             {block:Caption}<div class="caption">{Caption}</div>{/block:Caption}
@@ -123,13 +123,13 @@
         </div>
         {/block:Photoset}
         {block:Panorama}
-        <div class="b-the-work__post-panorama">
+        <div class="b-work__post-panorama">
             {LinkOpenTag}<img src="{PhotoURL-Panorama}" alt="{PhotoAlt}" />{LinkCloseTag}
             {block:Caption}<div class="caption">{Caption}</div>{/block:Caption}
         </div>
         {/block:Panorama}
         {block:Chat}
-        <div class="b-the-work__post-chat">
+        <div class="b-work__post-chat">
           {block:Title}<h3>{Title}</h3>{/block:Title}
           <ul class="conversation">
             {block:Lines}
@@ -142,7 +142,7 @@
         </div>
         {/block:Chat}
         {block:Answer}
-        <div class="b-the-work__post-answer">
+        <div class="b-work__post-answer">
           <img src="{AskerPortraitURL-40}">
           {Asker}
           {Question}
@@ -152,7 +152,7 @@
         {block:IndexPage}<p><a href="{Permalink}" class="permalink">{lang:Permalink}</a></p>{/block:IndexPage}
       </article>
       {/block:Posts}
-    </div><!-- .b-the-work -->
+    </div><!-- #b-work -->
 
     {block:PermalinkPagination}
     <div class="pagination">
@@ -177,6 +177,7 @@
     <div id="b-contact"></div>
 
     <!-- TODO: add other tumblr blog here -->
+    <div id="b-blog"></div>
   </section><!-- .b-content -->
 
   <!-- CDNs -->
