@@ -2,16 +2,7 @@
 @import "bower_components/susy/sass/_susy.scss";
 // endbower
 
-// apply a natural box layout model to all elements, but allowing components to change
-html { box-sizing: border-box; }
-*,
-*:before,
-*:after { box-sizing: inherit; }
-
-.browserupgrade { margin: 0.2em 0; padding: 0.2em 0; background: #ccc; color: #000; }
-
-img { max-width: 100%; }
-
 @import "config";
+@import "globals";
 @import "b-header";
 @import "b-hero";
