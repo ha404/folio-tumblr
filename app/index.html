@@ -3,27 +3,20 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-  <meta name="viewport" content="width=device-width">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <title>{Title}{block:PostSummary} &mdash; {PostSummary}{/block:PostSummary}</title>
   {block:Description}<meta name="description" content="{MetaDescription}">{/block:Description}
 
   <link rel="apple-touch-icon" href="{PortraitURL-128}">
   <link rel="shortcut icon" href="{Favicon}">
   <link rel="alternate" type="application/rss+xml" href="{RSS}">
+
   <!-- custom google font -->
   <link href="http://fonts.googleapis.com/css?family=Amaranth" rel="stylesheet" type="text/css">
   <!-- insert my custom css here -->
+  <link rel="stylesheet" href="//www.chriskevinha.com/clients/lina/vendor.css">
   <link rel="stylesheet" href="//www.chriskevinha.com/clients/lina/main.css">
-  <style type="text/css">
-    img, video, object, embed {
-      max-width: 100%;
-      height: auto !important;
-    }
-    /*Tumblr inherited */
-    iframe#tumblr_controls {}
-    .search_query {}
-    .read_more_container a {}
-  </style>
+
   <!--[if IE]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 </head>
 <body>
@@ -39,13 +32,13 @@
         <a class="b-header__nav-item-a_about-me" href="#TODO">About Me</a>
       </li>
       <li class="b-header__nav-item">
-        <a class="b-header__nav-item-a_the-work" href="#TODO">The Work</a>
+        <a class="b-header__nav-item-a_the-work" href="#b-the-work">The Work</a>
       </li>
       <li class="b-header__nav-item">
-        <a class="b-header__nav-item-a_home" href="#TODO">Home</a>
+        <a class="b-header__nav-item-a_home" href="#">Home</a>
       </li>
       <li class="b-header__nav-item">
-        <a class="b-header__nav-item-a_talk-to-me" href="#TODO">Talk to Me</a>
+        <a class="b-header__nav-item-a_contact" href="#b-contact">Talk to Me</a>
       </li>
       <li class="b-header__nav-item">
         <a class="b-header__nav-item-a_for-fun" href="#TODO">For Fun</a>
@@ -59,101 +52,107 @@
       <input type="submit" value="{lang:Search}">
     </form> -->
   </header>
-  <section class="content">
 
+  <div class="b-hero"></div>
 
+  <section class="b-content">
     {block:SearchPage}
     <div class="result">
       <p>{lang:Found SearchResultCount results for SearchQuery 2}</p>
       {block:NoSearchResults}<p>{lang:No results for SearchQuery 2}</p>{/block:NoSearchResults}
     </div>
     {/block:SearchPage}
-    {block:TagPage}<div class="result"><p>{lang:TagResultCount posts tagged Tag 3}</p></div>{/block:TagPage}
 
-    {block:Posts}
-    <article class="post {TagsAsClasses}">
-      {block:Date}
-      {block:NewDayDate}<p>{DayOfWeek}, {Month} {DayOfMonth}, {Year}</p>{/block:NewDayDate}
-      {block:SameDayDate}<p>{DayOfWeek}, {Month} {DayOfMonth}, {Year}</p>{/block:SameDayDate}
-      {/block:Date}
-      {block:Text}
-      <div class="text">
-        {block:Title}<h3>{Title}</h3>{/block:Title}
-        {Body}
-      </div>
-      {/block:Text}
-      {block:Quote}
-      <div class="quote">
-        <blockquote class="words {Length}">&#8220;{Quote}&#8221;</blockquote>
-        {block:Source}<p class="source">&mdash; {Source}</p>{/block:Source}
-      </div>
-      {/block:Quote}
-      {block:Link}
-      <div class="link">
-        <h3><a href="{URL}" {Target}>{Name}</a></h3>
-        {block:Description}<div class="caption">{Description}</div>{/block:Description}
-      </div>
-      {/block:Link}
-      {block:Video}
-      <div class="video">
-        {Video-500}
-        {block:Caption}<div class="caption">{Caption}</div>{/block:Caption}
-      </div>
-      {/block:Video}
-      {block:Audio}
-      <div class="audio">
-        {block:AlbumArt}<img src="{AlbumArtURL}" alt="">{/block:AlbumArt}
-        {AudioPlayerBlack}
-        {block:Caption}<div class="caption">{Caption}</div>{/block:Caption}
-      </div>
-      {/block:Audio}
-      {block:Photo}
-      <div class="photo">
-          {LinkOpenTag}<img src="{PhotoURL-HighRes}" alt="{PhotoAlt}"/>{LinkCloseTag}
-          {block:Caption}<div class="caption">{Caption}</div>{/block:Caption}
-      </div>
-      {/block:Photo}
-      {block:Photoset}
-      <div class="photoset">
-        {block:Photos}
-          <img src="{PhotoURL-HighRes}" alt="{PhotoAlt}"/>
-          {block:Caption}<div class="caption">{Caption}</div>{/block:Caption}
-          {/block:Photos}
-        {block:Caption}<div class="caption">{Caption}</div>{/block:Caption}
-      </div>
-      {/block:Photoset}
+    {block:TagPage}
+    <div class="result">
+      <p>{lang:TagResultCount posts tagged Tag 3}</p>
+    </div>
+    {/block:TagPage}
 
-      {block:Panorama}
-      <div class="panorama">
-          {LinkOpenTag}<img src="{PhotoURL-Panorama}" alt="{PhotoAlt}" />{LinkCloseTag}
+    <div id="b-the-work">
+      {block:Posts}
+      <article class="b-the-work__post {TagsAsClasses}">
+        {block:Date}
+        {block:NewDayDate}<p>{DayOfWeek}, {Month} {DayOfMonth}, {Year}</p>{/block:NewDayDate}
+        {block:SameDayDate}<p>{DayOfWeek}, {Month} {DayOfMonth}, {Year}</p>{/block:SameDayDate}
+        {/block:Date}
+        {block:Text}
+        <div class="b-the-work__post-text">
+          {block:Title}<h3>{Title}</h3>{/block:Title}
+          {Body}
+        </div>
+        {/block:Text}
+        {block:Quote}
+        <div class="b-the-work__post-quote">
+          <blockquote class="words {Length}">&#8220;{Quote}&#8221;</blockquote>
+          {block:Source}<p class="source">&mdash; {Source}</p>{/block:Source}
+        </div>
+        {/block:Quote}
+        {block:Link}
+        <div class="b-the-work__post-link">
+          <h3><a href="{URL}" {Target}>{Name}</a></h3>
+          {block:Description}<div class="caption">{Description}</div>{/block:Description}
+        </div>
+        {/block:Link}
+        {block:Video}
+        <div class="b-the-work__post-video">
+          {Video-500}
           {block:Caption}<div class="caption">{Caption}</div>{/block:Caption}
-      </div>
-      {/block:Panorama}
-
-      {block:Chat}
-      <div class="chat">
-        {block:Title}<h3>{Title}</h3>{/block:Title}
-        <ul class="conversation">
-          {block:Lines}
-          <li class="line {Alt}">
-            {block:Label}<span class="person">{Label}</span>{/block:Label}
-            <span class="person-said">{Line}</span>
-          </li>
-          {/block:Lines}
-        </ul>
-      </div>
-      {/block:Chat}
-      {block:Answer}
-      <div class="answer">
-        <img src="{AskerPortraitURL-40}">
-        {Asker}
-        {Question}
-        {Answer}
-      </div>
-      {/block:Answer}
-      {block:IndexPage}<p><a href="{Permalink}" class="permalink">{lang:Permalink}</a></p>{/block:IndexPage}
-    </article>
-    {/block:Posts}
+        </div>
+        {/block:Video}
+        {block:Audio}
+        <div class="b-the-work__post-audio">
+          {block:AlbumArt}<img src="{AlbumArtURL}" alt="">{/block:AlbumArt}
+          {AudioPlayerBlack}
+          {block:Caption}<div class="caption">{Caption}</div>{/block:Caption}
+        </div>
+        {/block:Audio}
+        {block:Photo}
+        <div class="b-the-work__post-photo">
+            {LinkOpenTag}<img src="{PhotoURL-HighRes}" alt="{PhotoAlt}"/>{LinkCloseTag}
+            {block:Caption}<div class="caption">{Caption}</div>{/block:Caption}
+        </div>
+        {/block:Photo}
+        {block:Photoset}
+        <div class="b-the-work__post-photoset">
+          {block:Photos}
+            <img src="{PhotoURL-HighRes}" alt="{PhotoAlt}"/>
+            {block:Caption}<div class="caption">{Caption}</div>{/block:Caption}
+            {/block:Photos}
+          {block:Caption}<div class="caption">{Caption}</div>{/block:Caption}
+        </div>
+        {/block:Photoset}
+        {block:Panorama}
+        <div class="b-the-work__post-panorama">
+            {LinkOpenTag}<img src="{PhotoURL-Panorama}" alt="{PhotoAlt}" />{LinkCloseTag}
+            {block:Caption}<div class="caption">{Caption}</div>{/block:Caption}
+        </div>
+        {/block:Panorama}
+        {block:Chat}
+        <div class="b-the-work__post-chat">
+          {block:Title}<h3>{Title}</h3>{/block:Title}
+          <ul class="conversation">
+            {block:Lines}
+            <li class="line {Alt}">
+              {block:Label}<span class="person">{Label}</span>{/block:Label}
+              <span class="person-said">{Line}</span>
+            </li>
+            {/block:Lines}
+          </ul>
+        </div>
+        {/block:Chat}
+        {block:Answer}
+        <div class="b-the-work__post-answer">
+          <img src="{AskerPortraitURL-40}">
+          {Asker}
+          {Question}
+          {Answer}
+        </div>
+        {/block:Answer}
+        {block:IndexPage}<p><a href="{Permalink}" class="permalink">{lang:Permalink}</a></p>{/block:IndexPage}
+      </article>
+      {/block:Posts}
+    </div><!-- .b-the-work -->
 
     {block:PermalinkPagination}
     <div class="pagination">
@@ -174,17 +173,36 @@
       {block:NextPage}<a class="next" href="{NextPage}">{lang:Next}</a>{/block:NextPage}
     </div>
     {/block:Pagination}
-  </section><!--close content-->
 
-  <!-- build:js scripts/vendor.js -->
-  <!-- bower:js -->
-  <script src="/bower_components/modernizr/modernizr.js"></script>
-  <script src="/bower_components/jquery/dist/jquery.js"></script>
-  <!-- endbower -->
-  <!-- endbuild -->
+    <div id="b-contact"></div>
 
-  <!-- build:js scripts/main.js -->
-  <script src="scripts/main.js"></script>
-  <!-- endbuild -->
+    <!-- TODO: add other tumblr blog here -->
+  </section><!-- .b-content -->
+
+  <!-- CDNs -->
+  <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 </body>
 </html>
+
+<!-- TODO: REMOVE IN PRODUCTION -->
+<!-- build:css styles/vendor.css -->
+<!-- bower:css -->
+<link rel="stylesheet" href="/bower_components/normalize-css/normalize.css" />
+<!-- endbower -->
+<!-- endbuild -->
+
+<!-- build:css styles/main.css -->
+<link rel="stylesheet" href="styles/main.css">
+<!-- endbuild -->
+
+<!-- build:js scripts/vendor.js -->
+<!-- bower:js -->
+<script src="/bower_components/modernizr/modernizr.js"></script>
+<script src="/bower_components/jquery/dist/jquery.js"></script>
+<!-- endbower -->
+<!-- endbuild -->
+
+<!-- build:js scripts/main.js -->
+<script src="scripts/main.js"></script>
+<!-- endbuild -->
