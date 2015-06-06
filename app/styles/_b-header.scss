@@ -1,3 +1,10 @@
 .b-header {}
 .b-header__nav { margin: 0; padding: 0; }
 .b-header__nav-item { float: left; list-style: none; }
+
+%b-header__nav-item-a { color: $white; }
+.b-header__nav-item-a_about-me { @extend %b-header__nav-item-a; }
+.b-header__nav-item-a_work { @extend %b-header__nav-item-a; }
+.b-header__nav-item-a_home { @extend %b-header__nav-item-a; }
+.b-header__nav-item-a_contact { @extend %b-header__nav-item-a; }
+.b-header__nav-item-a_blog { @extend %b-header__nav-item-a; }

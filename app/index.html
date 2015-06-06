@@ -32,7 +32,7 @@
         <a class="b-header__nav-item-a_about-me" href="#TODO">About Me</a>
       </li>
       <li class="b-header__nav-item">
-        <a class="b-header__nav-item-a_the-work" href="#b-work">The Work</a>
+        <a class="b-header__nav-item-a_work" href="#b-work">The Work</a>
       </li>
       <li class="b-header__nav-item">
         <a class="b-header__nav-item-a_home" href="#">Home</a>
@@ -41,7 +41,7 @@
         <a class="b-header__nav-item-a_contact" href="#b-contact">Talk to Me</a>
       </li>
       <li class="b-header__nav-item">
-        <a class="b-header__nav-item-a_for-fun" href="#b-blog">For Fun</a>
+        <a class="b-header__nav-item-a_blog" href="#b-blog">For Fun</a>
       </li>
       {block:HasPages}{block:Pages}<li class="b-header__nav-item"><a class="b-header__nav-item-a" href="{URL}">{Label}</a></li>{/block:Pages}{/block:HasPages}
       <!-- <li><a href="/archive">{lang:Archive}</a></li> -->
@@ -114,7 +114,7 @@
           {block:Photos}
             <img src="{PhotoURL-HighRes}" alt="{PhotoAlt}"/>
             {block:Caption}<div class="caption">{Caption}</div>{/block:Caption}
-            {/block:Photos}
+          {/block:Photos}
           {block:Caption}<div class="caption">{Caption}</div>{/block:Caption}
         </div>
         {/block:Photoset}
