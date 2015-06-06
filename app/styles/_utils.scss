@@ -1,0 +1,2 @@
+// image replacement
+@mixin ir($image) { border: 0; font: 0/0 a; text-shadow: none; color: transparent; background: url($image); }
