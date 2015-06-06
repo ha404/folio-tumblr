@@ -72,10 +72,6 @@
     <div id="b-work">
       {block:Posts}
       <article class="b-work__post {TagsAsClasses}">
-        {block:Date}
-        {block:NewDayDate}<p>{DayOfWeek}, {Month} {DayOfMonth}, {Year}</p>{/block:NewDayDate}
-        {block:SameDayDate}<p>{DayOfWeek}, {Month} {DayOfMonth}, {Year}</p>{/block:SameDayDate}
-        {/block:Date}
         {block:Text}
         <div class="b-work__post-text">
           {block:Title}<h3>{Title}</h3>{/block:Title}
