@@ -29,19 +29,19 @@
     <!-- {block:Description}<div class="description">{Description}</div>{/block:Description} -->
     <ul class="b-header__nav">
       <li class="b-header__nav-item">
-        <a class="b-header__nav-item-a_about-me" href="#TODO">About Me</a>
+        <a class="b-header__nav-item-a_about-me" href="#TODO">About</a>
       </li>
       <li class="b-header__nav-item">
-        <a class="b-header__nav-item-a_work" href="#b-work">The Work</a>
+        <a class="b-header__nav-item-a_work" href="#b-work">Work</a>
       </li>
       <li class="b-header__nav-item">
         <a class="b-header__nav-item-a_home" href="#">Home</a>
       </li>
       <li class="b-header__nav-item">
-        <a class="b-header__nav-item-a_contact" href="#b-contact">Talk to Me</a>
+        <a class="b-header__nav-item-a_contact" href="#b-contact">Contact</a>
       </li>
       <li class="b-header__nav-item">
-        <a class="b-header__nav-item-a_blog" href="#b-blog">For Fun</a>
+        <a class="b-header__nav-item-a_blog" href="#b-blog">Blog</a>
       </li>
       {block:HasPages}{block:Pages}<li class="b-header__nav-item"><a class="b-header__nav-item-a" href="{URL}">{Label}</a></li>{/block:Pages}{/block:HasPages}
       <!-- <li><a href="/archive">{lang:Archive}</a></li> -->
@@ -70,6 +70,7 @@
     {/block:TagPage}
 
     <div id="b-work">
+      <h2 class="b-work__h2">The Work</h2>
       {block:Posts}
       <article class="b-work__post {TagsAsClasses}">
         {block:Text}
@@ -111,11 +112,13 @@
         {/block:Photo}
         {block:Photoset}
         <div class="b-work__post-photoset">
+          {block:Caption}<div class="b-work__post-photoset-caption">{Caption}</div>{/block:Caption}
           {block:Photos}
-            <img src="{PhotoURL-HighRes}" alt="{PhotoAlt}"/>
-            {block:Caption}<div class="caption">{Caption}</div>{/block:Caption}
+            <div class="b-work__post-photoset-photo">
+              <img src="{PhotoURL-HighRes}" alt="{PhotoAlt}"/>
+              {block:Caption}<div class="caption">{Caption}</div>{/block:Caption}
+            </div>
           {/block:Photos}
-          {block:Caption}<div class="caption">{Caption}</div>{/block:Caption}
         </div>
         {/block:Photoset}
         {block:Panorama}
@@ -179,6 +182,9 @@
   <!-- CDNs -->
   <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
   <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
+  <script src="//www.chriskevinha.com/clients/lina/scripts/vendor.js"></script>
+  <script src="//www.chriskevinha.com/clients/lina/scripts/main.js"></script>
 </body>
 </html>
 
@@ -186,6 +192,7 @@
 <!-- build:css styles/vendor.css -->
 <!-- bower:css -->
 <link rel="stylesheet" href="/bower_components/normalize-css/normalize.css" />
+<link rel="stylesheet" href="/bower_components/lightslider/dist/css/lightslider.min.css" />
 <!-- endbower -->
 <!-- endbuild -->
 
@@ -197,6 +204,7 @@
 <!-- bower:js -->
 <script src="/bower_components/modernizr/modernizr.js"></script>
 <script src="/bower_components/jquery/dist/jquery.js"></script>
+<script src="/bower_components/lightslider/dist/js/lightslider.min.js"></script>
 <!-- endbower -->
 <!-- endbuild -->
 
