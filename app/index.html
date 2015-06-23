@@ -12,7 +12,7 @@
   <link rel="alternate" type="application/rss+xml" href="{RSS}">
 
   <!-- custom google font -->
-  <link href="http://fonts.googleapis.com/css?family=Amaranth" rel="stylesheet" type="text/css">
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
   <!-- insert my custom css here -->
   <link rel="stylesheet" href="//www.chriskevinha.com/clients/lina/styles/vendor.css">
   <link rel="stylesheet" href="//www.chriskevinha.com/clients/lina/styles/main.css">
@@ -72,84 +72,115 @@
     <div id="b-work">
       <h2 class="b-work__h2">The Work</h2>
       {block:Posts}
-      <article class="b-work__post {TagsAsClasses}">
-        {block:Text}
-        <div class="b-work__post-text">
-          {block:Title}<h3>{Title}</h3>{/block:Title}
-          {Body}
-        </div>
-        {/block:Text}
-        {block:Quote}
-        <div class="b-work__post-quote">
-          <blockquote class="words {Length}">&#8220;{Quote}&#8221;</blockquote>
-          {block:Source}<p class="source">&mdash; {Source}</p>{/block:Source}
-        </div>
-        {/block:Quote}
-        {block:Link}
-        <div class="b-work__post-link">
-          <h3><a href="{URL}" {Target}>{Name}</a></h3>
-          {block:Description}<div class="caption">{Description}</div>{/block:Description}
-        </div>
-        {/block:Link}
-        {block:Video}
-        <div class="b-work__post-video">
-          {Video-500}
-          {block:Caption}<div class="caption">{Caption}</div>{/block:Caption}
-        </div>
-        {/block:Video}
-        {block:Audio}
-        <div class="b-work__post-audio">
-          {block:AlbumArt}<img src="{AlbumArtURL}" alt="">{/block:AlbumArt}
-          {AudioPlayerBlack}
-          {block:Caption}<div class="caption">{Caption}</div>{/block:Caption}
-        </div>
-        {/block:Audio}
-        {block:Photo}
-        <div class="b-work__post-photo">
-            {LinkOpenTag}<img src="{PhotoURL-HighRes}" alt="{PhotoAlt}"/>{LinkCloseTag}
-            {block:Caption}<div class="caption">{Caption}</div>{/block:Caption}
-        </div>
-        {/block:Photo}
-        {block:Photoset}
-        <div class="b-work__post-photoset">
-          {block:Caption}<div class="b-work__post-photoset-caption">{Caption}</div>{/block:Caption}
-          {block:Photos}
-            <div class="b-work__post-photoset-photo">
-              <img src="{PhotoURL-HighRes}" alt="{PhotoAlt}"/>
+        <article class="b-work__post {TagsAsClasses}">
+          <!-- Text template -->
+          {block:Text}
+            <div class="b-work__post-text">
+              {block:Title}<h3>{Title}</h3>{/block:Title}
+              {Body}
+            </div>
+          {/block:Text}
+
+          <!-- Quote template -->
+          {block:Quote}
+            <div class="b-work__post-quote">
+              <blockquote class="words {Length}">&#8220;{Quote}&#8221;</blockquote>
+              {block:Source}<p class="source">&mdash; {Source}</p>{/block:Source}
+            </div>
+          {/block:Quote}
+
+          <!-- Link template -->
+          {block:Link}
+            <div class="b-work__post-link">
+              <h3><a href="{URL}" {Target}>{Name}</a></h3>
+              {block:Description}<div class="caption">{Description}</div>{/block:Description}
+            </div>
+          {/block:Link}
+
+          <!-- Video template -->
+          {block:Video}
+            <div class="b-work__post-video">
+              {Video-500}
               {block:Caption}<div class="caption">{Caption}</div>{/block:Caption}
             </div>
-          {/block:Photos}
-        </div>
-        {/block:Photoset}
-        {block:Panorama}
-        <div class="b-work__post-panorama">
-            {LinkOpenTag}<img src="{PhotoURL-Panorama}" alt="{PhotoAlt}" />{LinkCloseTag}
+          {/block:Video}
+
+          <!-- Audio template -->
+          {block:Audio}
+          <div class="b-work__post-audio">
+            {block:AlbumArt}<img src="{AlbumArtURL}" alt="">{/block:AlbumArt}
+            {AudioPlayerBlack}
             {block:Caption}<div class="caption">{Caption}</div>{/block:Caption}
-        </div>
-        {/block:Panorama}
-        {block:Chat}
-        <div class="b-work__post-chat">
-          {block:Title}<h3>{Title}</h3>{/block:Title}
-          <ul class="conversation">
-            {block:Lines}
-            <li class="line {Alt}">
-              {block:Label}<span class="person">{Label}</span>{/block:Label}
-              <span class="person-said">{Line}</span>
-            </li>
-            {/block:Lines}
-          </ul>
-        </div>
-        {/block:Chat}
-        {block:Answer}
-        <div class="b-work__post-answer">
-          <img src="{AskerPortraitURL-40}">
-          {Asker}
-          {Question}
-          {Answer}
-        </div>
-        {/block:Answer}
-        {block:IndexPage}<p><a href="{Permalink}" class="permalink">{lang:Permalink}</a></p>{/block:IndexPage}
-      </article>
+          </div>
+          {/block:Audio}
+
+          <!-- Photo template -->
+          {block:Photo}
+          <div class="b-work__post-photo">
+              {LinkOpenTag}<img src="{PhotoURL-HighRes}" alt="{PhotoAlt}"/>{LinkCloseTag}
+              {block:Caption}<div class="caption">{Caption}</div>{/block:Caption}
+          </div>
+          {/block:Photo}
+
+          <!-- Photoset template -->
+          {block:Photoset}
+            {block:IndexPage}
+              <a href="#{PostID}">
+                {block:Photos}
+                  <img src="{PhotoURL-HighRes}" alt="{PhotoAlt}"/>
+                  <!--
+                {/block:Photos}
+                -->
+                {block:Caption}<div class="b-work__post-photoset-caption" data-tags="{TagsAsClasses}">{Caption}</div>{/block:Caption}
+              </a>
+              <div class="b-work__post-photoset remodal" data-remodal-id="{PostID}">
+                {block:Photos}
+                  <div class="b-work__post-photoset-photo">
+                    <img src="{PhotoURL-HighRes}" alt="{PhotoAlt}"/>
+                    {block:Caption}<div class="caption">{Caption}</div>{/block:Caption}
+                  </div>
+                {/block:Photos}
+              </div>
+            {/block:IndexPage}
+            {block:PermalinkPage}
+              {Photoset-500}
+            {/block:PermalinkPage}
+          {/block:Photoset}
+
+          <!-- Panorama template -->
+          {block:Panorama}
+            <div class="b-work__post-panorama">
+              {LinkOpenTag}<img src="{PhotoURL-Panorama}" alt="{PhotoAlt}" />{LinkCloseTag}
+              {block:Caption}<div class="caption">{Caption}</div>{/block:Caption}
+            </div>
+          {/block:Panorama}
+
+          <!-- Chat template -->
+          {block:Chat}
+            <div class="b-work__post-chat">
+              {block:Title}<h3>{Title}</h3>{/block:Title}
+              <ul class="conversation">
+                {block:Lines}
+                <li class="line {Alt}">
+                  {block:Label}<span class="person">{Label}</span>{/block:Label}
+                  <span class="person-said">{Line}</span>
+                </li>
+                {/block:Lines}
+              </ul>
+            </div>
+          {/block:Chat}
+
+          <!-- Answer template -->
+          {block:Answer}
+            <div class="b-work__post-answer">
+              <img src="{AskerPortraitURL-40}">
+              {Asker}
+              {Question}
+              {Answer}
+            </div>
+          {/block:Answer}
+          <!-- {block:IndexPage}<p><a href="{Permalink}" class="permalink">{lang:Permalink}</a></p>{/block:IndexPage} -->
+        </article>
       {/block:Posts}
     </div><!-- #b-work -->
 
@@ -192,7 +223,8 @@
 <!-- build:css styles/vendor.css -->
 <!-- bower:css -->
 <link rel="stylesheet" href="/bower_components/normalize-css/normalize.css" />
-<link rel="stylesheet" href="/bower_components/lightslider/dist/css/lightslider.min.css" />
+<link rel="stylesheet" href="/bower_components/remodal/dist/remodal.css" />
+<link rel="stylesheet" href="/bower_components/remodal/dist/remodal-default-theme.css" />
 <!-- endbower -->
 <!-- endbuild -->
 
@@ -204,7 +236,7 @@
 <!-- bower:js -->
 <script src="/bower_components/modernizr/modernizr.js"></script>
 <script src="/bower_components/jquery/dist/jquery.js"></script>
-<script src="/bower_components/lightslider/dist/js/lightslider.min.js"></script>
+<script src="/bower_components/remodal/dist/remodal.js"></script>
 <!-- endbower -->
 <!-- endbuild -->
 

@@ -1,4 +1,15 @@
+// conditional js
+.js {
+  .b-work__post { position: relative;
+    &:hover .b-work__post-photoset-caption { display: block; cursor: pointer; color: $white; }
+  }
+  .b-work__post-photoset { }
+  .b-work__post-photoset-caption { display: none; position: absolute; top: 0; right: 0; bottom: 0; left: 0; background: rgba(0, 0, 0, 0.5); }
+
+  // modal stuff
+  .remodal {
+  }
+}
+
 .b-work {}
 .b-work__h2 { font-size: 36px; text-transform: lowercase; }
-
-.b-work__post-photoset-caption { }
