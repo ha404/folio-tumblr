@@ -12,7 +12,7 @@
   <link rel="alternate" type="application/rss+xml" href="{RSS}">
 
   <!-- custom google font -->
-  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+  <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet" type="text/css">
   <!-- insert my custom css here -->
   <link rel="stylesheet" href="//www.chriskevinha.com/clients/lina/styles/vendor.css">
   <link rel="stylesheet" href="//www.chriskevinha.com/clients/lina/styles/main.css">
@@ -72,58 +72,8 @@
     <div id="b-work">
       <h2 class="b-work__h2">The Work</h2>
       {block:Posts}
-        <article class="b-work__post {TagsAsClasses}">
-          <!-- Text template -->
-          {block:Text}
-            <div class="b-work__post-text">
-              {block:Title}<h3>{Title}</h3>{/block:Title}
-              {Body}
-            </div>
-          {/block:Text}
-
-          <!-- Quote template -->
-          {block:Quote}
-            <div class="b-work__post-quote">
-              <blockquote class="words {Length}">&#8220;{Quote}&#8221;</blockquote>
-              {block:Source}<p class="source">&mdash; {Source}</p>{/block:Source}
-            </div>
-          {/block:Quote}
-
-          <!-- Link template -->
-          {block:Link}
-            <div class="b-work__post-link">
-              <h3><a href="{URL}" {Target}>{Name}</a></h3>
-              {block:Description}<div class="caption">{Description}</div>{/block:Description}
-            </div>
-          {/block:Link}
-
-          <!-- Video template -->
-          {block:Video}
-            <div class="b-work__post-video">
-              {Video-500}
-              {block:Caption}<div class="caption">{Caption}</div>{/block:Caption}
-            </div>
-          {/block:Video}
-
-          <!-- Audio template -->
-          {block:Audio}
-          <div class="b-work__post-audio">
-            {block:AlbumArt}<img src="{AlbumArtURL}" alt="">{/block:AlbumArt}
-            {AudioPlayerBlack}
-            {block:Caption}<div class="caption">{Caption}</div>{/block:Caption}
-          </div>
-          {/block:Audio}
-
-          <!-- Photo template -->
-          {block:Photo}
-          <div class="b-work__post-photo">
-              {LinkOpenTag}<img src="{PhotoURL-HighRes}" alt="{PhotoAlt}"/>{LinkCloseTag}
-              {block:Caption}<div class="caption">{Caption}</div>{/block:Caption}
-          </div>
-          {/block:Photo}
-
-          <!-- Photoset template -->
-          {block:Photoset}
+        {block:Photoset}
+          <article class="b-work__post {TagsAsClasses}" data-permalink="{Permalink}">
             {block:IndexPage}
               <a href="#{PostID}">
                 {block:Photos}
@@ -134,6 +84,7 @@
                 {block:Caption}<div class="b-work__post-photoset-caption" data-tags="{TagsAsClasses}">{Caption}</div>{/block:Caption}
               </a>
               <div class="b-work__post-photoset remodal" data-remodal-id="{PostID}">
+                <button data-remodal-action="close" class="remodal-close"></button>
                 {block:Photos}
                   <div class="b-work__post-photoset-photo">
                     <img src="{PhotoURL-HighRes}" alt="{PhotoAlt}"/>
@@ -145,44 +96,131 @@
             {block:PermalinkPage}
               {Photoset-500}
             {/block:PermalinkPage}
-          {/block:Photoset}
-
-          <!-- Panorama template -->
-          {block:Panorama}
-            <div class="b-work__post-panorama">
-              {LinkOpenTag}<img src="{PhotoURL-Panorama}" alt="{PhotoAlt}" />{LinkCloseTag}
-              {block:Caption}<div class="caption">{Caption}</div>{/block:Caption}
-            </div>
-          {/block:Panorama}
-
-          <!-- Chat template -->
-          {block:Chat}
-            <div class="b-work__post-chat">
-              {block:Title}<h3>{Title}</h3>{/block:Title}
-              <ul class="conversation">
-                {block:Lines}
-                <li class="line {Alt}">
-                  {block:Label}<span class="person">{Label}</span>{/block:Label}
-                  <span class="person-said">{Line}</span>
-                </li>
-                {/block:Lines}
-              </ul>
-            </div>
-          {/block:Chat}
-
-          <!-- Answer template -->
-          {block:Answer}
-            <div class="b-work__post-answer">
-              <img src="{AskerPortraitURL-40}">
-              {Asker}
-              {Question}
-              {Answer}
-            </div>
-          {/block:Answer}
-          <!-- {block:IndexPage}<p><a href="{Permalink}" class="permalink">{lang:Permalink}</a></p>{/block:IndexPage} -->
-        </article>
+          </article>
+        {/block:Photoset}
       {/block:Posts}
     </div><!-- #b-work -->
+
+    <div id="b-contact">
+      <h2 class="b-work__h2_contact">Let's Talk</h2>
+      <div id="wufoo-z1jaxpx00v1kd3i">
+        Fill out my <a href="https://devlina.wufoo.com/forms/z1jaxpx00v1kd3i">online form</a>.
+      </div>
+      <div id="wuf-adv" style="font-family:inherit;font-size: small;color:#a7a7a7;text-align:center;display:block;">There are tons of <a href="http://www.wufoo.com/features/">Wufoo features</a> to help make your forms awesome.</div>
+      <script type="text/javascript">var z1jaxpx00v1kd3i;(function(d, t) {
+        var s = d.createElement(t), options = {
+        'userName':'devlina',
+        'formHash':'z1jaxpx00v1kd3i',
+        'autoResize':true,
+        'height':'457',
+        'async':true,
+        'host':'wufoo.com',
+        'header':'show',
+        'ssl':true};
+        s.src = ('https:' == d.location.protocol ? 'https://' : 'http://') + 'www.wufoo.com/scripts/embed/form.js';
+        s.onload = s.onreadystatechange = function() {
+        var rs = this.readyState; if (rs) if (rs != 'complete') if (rs != 'loaded') return;
+        try { z1jaxpx00v1kd3i = new WufooForm();z1jaxpx00v1kd3i.initialize(options);z1jaxpx00v1kd3i.display(); } catch (e) {}};
+        var scr = d.getElementsByTagName(t)[0], par = scr.parentNode; par.insertBefore(s, scr);
+        })(document, 'script');
+      </script>
+    </div><!-- #b-contact -->
+
+    <div id="b-blog">
+      <h2 class="b-work__h2">Just for Fun</h2>
+      {block:Posts}
+          {block:Text}
+            <article class="b-blog__post {TagsAsClasses}" data-permalink="{Permalink}">
+              <div class="b-work__post-text">
+                {block:Title}<h3>{Title}</h3>{/block:Title}
+                {Body}
+              </div>
+            </article>
+          {/block:Text}
+
+          {block:Quote}
+            <article class="b-blog__post {TagsAsClasses}" data-permalink="{Permalink}">
+              <div class="b-work__post-quote">
+                <blockquote class="words {Length}">&#8220;{Quote}&#8221;</blockquote>
+                {block:Source}<p class="source">&mdash; {Source}</p>{/block:Source}
+              </div>
+            </article>
+          {/block:Quote}
+
+          {block:Link}
+            <article class="b-blog__post {TagsAsClasses}" data-permalink="{Permalink}">
+              <div class="b-work__post-link">
+                <h3><a href="{URL}" {Target}>{Name}</a></h3>
+                {block:Description}<div class="caption">{Description}</div>{/block:Description}
+              </div>
+            </article>
+          {/block:Link}
+
+          {block:Video}
+            <article class="b-blog__post {TagsAsClasses}" data-permalink="{Permalink}">
+              <div class="b-work__post-video">
+                {Video-500}
+                {block:Caption}<div class="caption">{Caption}</div>{/block:Caption}
+              </div>
+            </article>
+          {/block:Video}
+
+          {block:Audio}
+            <article class="b-blog__post {TagsAsClasses}" data-permalink="{Permalink}">
+              <div class="b-work__post-audio">
+                {block:AlbumArt}<img src="{AlbumArtURL}" alt="">{/block:AlbumArt}
+                {AudioPlayerBlack}
+                {block:Caption}<div class="caption">{Caption}</div>{/block:Caption}
+              </div>
+            </article>
+          {/block:Audio}
+
+          {block:Photo}
+            <article class="b-blog__post {TagsAsClasses}" data-permalink="{Permalink}">
+              <div class="b-work__post-photo">
+                {LinkOpenTag}<img src="{PhotoURL-HighRes}" alt="{PhotoAlt}"/>{LinkCloseTag}
+                {block:Caption}<div class="caption">{Caption}</div>{/block:Caption}
+              </div>
+            </article>
+          {/block:Photo}
+
+          {block:Panorama}
+            <article class="b-blog__post {TagsAsClasses}" data-permalink="{Permalink}">
+              <div class="b-work__post-panorama">
+                {LinkOpenTag}<img src="{PhotoURL-Panorama}" alt="{PhotoAlt}" />{LinkCloseTag}
+                {block:Caption}<div class="caption">{Caption}</div>{/block:Caption}
+              </div>
+            </article>
+          {/block:Panorama}
+
+          {block:Chat}
+            <article class="b-blog__post {TagsAsClasses}" data-permalink="{Permalink}">
+              <div class="b-work__post-chat">
+                {block:Title}<h3>{Title}</h3>{/block:Title}
+                <ul class="conversation">
+                  {block:Lines}
+                  <li class="line {Alt}">
+                    {block:Label}<span class="person">{Label}</span>{/block:Label}
+                    <span class="person-said">{Line}</span>
+                  </li>
+                  {/block:Lines}
+                </ul>
+              </div>
+            </article>
+          {/block:Chat}
+
+          {block:Answer}
+            <article class="b-blog__post {TagsAsClasses}" data-permalink="{Permalink}">
+              <div class="b-work__post-answer">
+                <img src="{AskerPortraitURL-40}">
+                {Asker}
+                {Question}
+                {Answer}
+              </div>
+            </article>
+          {/block:Answer}
+      {/block:Posts}
+    </div><!-- #b-blog -->
 
     {block:PermalinkPagination}
     <div class="pagination">
@@ -203,11 +241,6 @@
       {block:NextPage}<a class="next" href="{NextPage}">{lang:Next}</a>{/block:NextPage}
     </div>
     {/block:Pagination}
-
-    <div id="b-contact"></div>
-
-    <!-- TODO: add other tumblr blog here -->
-    <div id="b-blog"></div>
   </section><!-- .b-content -->
 
   <!-- CDNs -->

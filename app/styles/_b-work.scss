@@ -1,15 +1,46 @@
 // conditional js
-.js {
+.js { // js specific stuff goes here
   .b-work__post { position: relative;
-    &:hover .b-work__post-photoset-caption { display: block; cursor: pointer; color: $white; }
+    &:hover .b-work__post-photoset-caption { display: block; cursor: pointer; }
   }
-  .b-work__post-photoset { }
-  .b-work__post-photoset-caption { display: none; position: absolute; top: 0; right: 0; bottom: 0; left: 0; background: rgba(0, 0, 0, 0.5); }
+  .b-work__post-photoset-caption { display: block; position: absolute; top: 0; right: 0; bottom: 0; left: 0; padding: 8px; background: rgba(0, 0, 0, 0.5); text-align: center; color: $white; }
 
   // modal stuff
   .remodal {
   }
 }
 
-.b-work {}
-.b-work__h2 { font-size: 36px; text-transform: lowercase; }
+%b-post-container { @include container; max-width: 800px; margin-bottom: 48px; }
+
+#b-work { @extend %b-post-container; }
+.b-work__h2 { margin: 16px 0 0; padding: 0 16px; font-size: 36px; font-weight: 300; text-transform: lowercase; }
+.b-work__h2_contact { @extend .b-work__h2; text-align: right; }
+.b-work__post { float: left; width: 50%; border: 1px solid $black; overflow: hidden; }
+.b-work__post-thumb {}
+
+#b-contact { @extend %b-post-container; }
+label.desc, legend.desc { color: $white !important; }
+
+#b-blog { @extend %b-post-container; }
+.b-blog__post { padding: 0 16px; }
+
+// contact form
+#wuf-adv { display: none !important; }
+
+// tablet views
+@media screen and (min-width: 480px) {
+  .js { // js specific stuff goes here
+
+  }
+
+}
+
+// desktop views
+@media screen and (min-width: 768px) {
+  .js {
+    .b-work__post-photoset-caption { display: none; }
+  }
+
+  .b-work__h2 { padding: 0; font-size: 52px; }
+  .b-blog__post { padding: 0; }
+}

@@ -1,5 +1,5 @@
 .b-header {}
-.b-header__nav { @include container; min-height: 48px; padding: 0; text-align: center; }
+.b-header__nav { @include container; max-width: 800px; min-height: 48px; padding: 0 16px; text-align: center; }
 .b-header__nav-item { @include span(1 of 5 split); line-height: 48px; list-style: none; }
 
 %b-header__nav-item-a { text-decoration: none;
