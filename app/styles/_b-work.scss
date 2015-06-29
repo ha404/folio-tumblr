@@ -5,9 +5,8 @@
   }
   .b-work__post-photoset-caption { display: block; position: absolute; top: 0; right: 0; bottom: 0; left: 0; padding: 8px; background: rgba(0, 0, 0, 0.5); text-align: center; color: $white; }
 
-  // modal stuff
-  .remodal {
-  }
+  // carousel shizzle
+  .carousels { display: none; }
 }
 
 %b-post-container { @include container; max-width: 800px; margin-bottom: 48px; }
