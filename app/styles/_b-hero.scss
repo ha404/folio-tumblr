@@ -1,1 +1,11 @@
 .b-hero { width: 100%; min-height: 400px; margin: 0 auto; background: url(//www.chriskevinha.com/clients/lina/images/b-header/hero.jpg) no-repeat center bottom/cover; overflow: hidden; }
+
+// tablet views
+@media screen and (min-width: 480px) {
+  .b-hero {}
+}
+
+// desktop views
+@media screen and (min-width: 768px) {
+  .b-hero { min-height: 600px; }
+}
