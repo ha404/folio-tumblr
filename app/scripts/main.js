@@ -38,6 +38,7 @@
 
     // hide the $heroEl's background
     $heroEl.css('background', 'black');
+    $heroEl.css('max-width', '800px');
 
     // check if the post has been inited already, if not init it and then
     // store the element in a cache to be inited later if clicked on again
@@ -51,6 +52,8 @@
     }
 
     $heroEl.empty();
+    $heroEl.hide();
+    $heroEl.fadeIn('slow');
     $heroEl.append(carouselCacheObj[postIdEl][0]);
     $heroEl.append(carouselCacheObj[postIdEl][1]);
     init.carousel(postIdEl, postIdThumbsEl);
