@@ -11,6 +11,7 @@
   var carouselCacheObj = {},
       currPostIdEl;
 
+  // jquery helpers
   $.fn.extend({
     scrollTo: function (id) {
       $('html, body').animate({
