@@ -71,6 +71,7 @@
 
     <div id="b-work">
       <h2 class="b-work__h2">The Work</h2>
+      <div class="b-work__carousel"></div>
       {block:Posts}
         {block:Photoset}
           <article class="b-work__post {TagsAsClasses}" data-permalink="{Permalink}" data-post-id="{PostID}">
@@ -94,15 +95,19 @@
       {block:Posts}
         {block:Photoset}
           {block:IndexPage}
-            <div class="post-id_{PostID}" data-post-id="{PostID}">
+            <div class="post-id_{PostID} b-work__carousel-slides" data-post-id="{PostID}">
               {block:Photos}
-                <img src="{PhotoURL-HighRes}" alt="{PhotoAlt}"/>
+                <div class="b-work__carousel-slide">
+                  <img src="{PhotoURL-HighRes}" alt="{PhotoAlt}"/>
+                </div>
               {/block:Photos}
             </div>
 
-            <div class="post-id_{PostID}-thumbs">
+            <div class="post-id_{PostID}-thumbs b-work__carousel-thumbs">
               {block:Photos}
-                <img src="{PhotoURL-HighRes}" alt="{PhotoAlt}"/>
+                <div class="b-work__carousel-thumb">
+                  <img src="{PhotoURL-HighRes}" alt="{PhotoAlt}"/>
+                </div>
               {/block:Photos}
             </div>
           {/block:IndexPage}

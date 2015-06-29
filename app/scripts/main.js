@@ -3,10 +3,6 @@
 (function () {
   'use strict';
 
-  // elements
-  var heroEl = '.b-hero',
-      $heroEl = $(heroEl);
-
   // carousel shizzle
   var carouselCacheObj = {},
       currPostIdEl;
@@ -21,13 +17,15 @@
   });
 
   var handleWorkPostClick = function (el) {
-    var postIdEl = '.post-id_' + $(el).data('post-id'),
+    var carouselEl = '.b-work__carousel',
+        $carouselEl = $(carouselEl),
+        postIdEl = '.post-id_' + $(el).data('post-id'),
         $postIdEl = $(postIdEl),
         postIdThumbsEl = '.post-id_' + $(el).data('post-id') + '-thumbs',
         $postIdThumbsEl = $(postIdThumbsEl),
         $initedCarousel = $('.slick-initialized');
 
-    $.fn.scrollTo('.b-hero');
+    $.fn.scrollTo('#b-work');
 
     // prevent the current post from being clicked on again
     if (postIdEl === currPostIdEl) {
@@ -36,9 +34,9 @@
       currPostIdEl = postIdEl;
     }
 
-    // hide the $heroEl's background
-    $heroEl.css('background', 'black');
-    $heroEl.css('max-width', '800px');
+    // hide the $carouselEl's background
+    $carouselEl.css('background', 'black');
+    $carouselEl.css('max-width', '800px');
 
     // check if the post has been inited already, if not init it and then
     // store the element in a cache to be inited later if clicked on again
@@ -51,11 +49,11 @@
       $initedCarousel.slick('unslick');
     }
 
-    $heroEl.empty();
-    $heroEl.hide();
-    $heroEl.fadeIn('slow');
-    $heroEl.append(carouselCacheObj[postIdEl][0]);
-    $heroEl.append(carouselCacheObj[postIdEl][1]);
+    $carouselEl.empty();
+    $carouselEl.hide();
+    $carouselEl.fadeIn('slow');
+    $carouselEl.append(carouselCacheObj[postIdEl][0]);
+    $carouselEl.append(carouselCacheObj[postIdEl][1]);
     init.carousel(postIdEl, postIdThumbsEl);
     init.carouselThumbs(postIdThumbsEl, postIdEl);
   }; // handleWorkPostClick
@@ -97,6 +95,7 @@
         asNavFor: el,
         dots: true,
         centerMode: true,
+        centerPadding: '60px',
         focusOnSelect: true,
         infinite: false
       });

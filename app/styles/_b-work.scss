@@ -7,6 +7,19 @@
 
   // carousel shizzle
   .carousels { display: none; }
+  .slick-center {  }
+  .b-work__carousel { margin: 0 0 24px; }
+  .b-work__carousel-thumbs { margin: 0 36px; }
+  .b-work__carousel-thumb { position: relative; margin: 0 16px; cursor: pointer;
+    &.slick-center:before { content: ""; display: block; position: absolute; top: 0; right: 0; bottom: 0; left: 0; border: 3px solid $white; }
+  }
+  .slick-prev, .slick-next { width: auto; height: auto; }
+  .slick-prev { left: -36px;
+    &:before { content: ""; display: block; width: 32px; height: 32px; background: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M0%2C22L22%2C0l2.1%2C2.1L4.2%2C22l19.9%2C19.9L22%2C44L0%2C22L0%2C22L0%2C22z'%20fill%3D'%23ffffff'%2F%3E%3C%2Fsvg%3E") no-repeat center center/contain; }
+  }
+  .slick-next { right: -36px;
+    &:before { content: ""; display: block; width: 32px; height: 32px; background: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M27%2C22L27%2C22L5%2C44l-2.1-2.1L22.8%2C22L2.9%2C2.1L5%2C0L27%2C22L27%2C22z'%20fill%3D'%23ffffff'%2F%3E%3C%2Fsvg%3E") no-repeat center center/contain; }
+  }
 }
 
 %b-post-container { @include container; max-width: 800px; margin-bottom: 48px; }
