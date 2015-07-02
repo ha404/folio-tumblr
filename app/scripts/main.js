@@ -10,8 +10,11 @@
   // jquery helpers
   $.fn.extend({
     scrollTo: function (id) {
+      var headerElHeight = $('.b-header').outerHeight(),
+          scrollPos = $(id).offset().top - headerElHeight;
+
       $('html, body').animate({
-        scrollTop: $(id).offset().top
+        scrollTop: scrollPos
       }, 300);
     } // scrollTo
   });
@@ -66,8 +69,6 @@
 
       $('.b-header__nav-item').on('click', function (e) {
         var targetId = $(this).children().attr('href');
-
-        console.log(targetId);
 
         e.preventDefault();
         $.fn.scrollTo(targetId);
