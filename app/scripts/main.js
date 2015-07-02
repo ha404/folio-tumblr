@@ -11,7 +11,13 @@
   $.fn.extend({
     scrollTo: function (id) {
       var headerElHeight = $('.b-header').outerHeight(),
-          scrollPos = $(id).offset().top - headerElHeight;
+          scrollPos;
+
+      if (id !== '#') {
+        scrollPos = $(id).offset().top - headerElHeight;
+      } else {
+        scrollPos = 0;
+      }      
 
       $('html, body').animate({
         scrollTop: scrollPos

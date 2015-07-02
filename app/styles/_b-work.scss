@@ -33,7 +33,7 @@
 #b-contact { @extend %b-post-container; }
 label.desc, legend.desc { color: $white !important; }
 
-#b-blog { @extend %b-post-container; }
+#b-blog { @extend %b-post-container; min-height: 100vh; }
 .b-blog__post { padding: 0 16px; }
 
 // contact form
