@@ -24,7 +24,7 @@
 
 %b-post-container { @include container; max-width: 800px; margin-bottom: 48px; }
 
-#b-work { @extend %b-post-container; }
+#b-work { @extend %b-post-container; min-height: 50vh; }
 .b-work__h2 { margin: 16px 0 0; padding: 0 16px; font-size: 36px; font-weight: 300; text-transform: lowercase; }
 .b-work__h2_contact { @extend .b-work__h2; text-align: right; }
 .b-work__post { float: left; width: 50%; border: 1px solid $black; overflow: hidden; }

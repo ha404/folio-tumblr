@@ -1,1 +1,19 @@
 #b-contact { min-height: 50vh; }
+
+.b-contact-form { padding: 0 16px; }
+input[class^="b-contact-input_"],
+textarea[class^="b-contact-textarea_"] { margin: 0 0 8px; padding: 8px; }
+.b-contact-label_email { display: block; font-size: 24px; text-transform: uppercase; text-align: right; }
+.b-contact-input_email { display: block; font-size: 16px; width: 100%; color: $black; }
+.b-contact-textarea_message { display: block; width: 100%; color: $black; }
+.b-contact-input_submit { border: 0; background: none; text-transform: lowercase; color: $white; }
+
+// tablet views
+@media screen and (min-width: 480px) {
+
+}
+
+// desktop views
+@media screen and (min-width: 768px) {
+  .b-contact-form { padding: 0; }
+}

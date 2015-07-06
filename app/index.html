@@ -117,12 +117,15 @@
 
     <div id="b-contact">
       <h2 class="b-work__h2_contact">Let's Talk</h2>
-      <form action="https://getsimpleform.com/messages?form_api_token=9b60f46ff4431a9e81dabc696135ca67" method="post">
+      <form class="b-contact-form" action="https://getsimpleform.com/messages?form_api_token=9b60f46ff4431a9e81dabc696135ca67" method="post">
         <!-- the redirect_to is optional, the form will redirect to the referrer on submission -->
-        <input type="hidden" name="redirect_to" value="<the complete return url e.g. http://fooey.com/thank-you.html>" />
+        <!-- <input type="hidden" name="redirect_to" value="<the complete return url e.g. http://fooey.com/thank-you.html>" /> -->
         <!-- all your input fields here.... -->
-        <input type="text" name="test" />
-        <input type="submit" value="Test form" />
+        <label class="b-contact-label_email" for="b-contact-input_email">email me
+          <input id="b-contact-input_email" class="b-contact-input_email" type="text" name="email" placeholder="email address" />
+        </label>
+        <textarea class="b-contact-textarea_message" rows="4" type="textarea" name="message" placeholder="message"></textarea>
+        <input class="b-contact-input_submit" type="submit" value="Submit" />
       </form>
     </div><!-- #b-contact -->
 
@@ -223,23 +226,23 @@
     </div><!-- #b-blog -->
 
     {block:PermalinkPagination}
-    <div class="pagination">
-      {block:PreviousPost}<a class="prev" href="{PreviousPost}">{lang:Previous post}</a>{/block:PreviousPost}
-      {block:NextPost}<a class="next" href="{NextPost}">{lang:Next post}</a>{/block:NextPost}
-    </div>
+      <div class="pagination">
+        {block:PreviousPost}<a class="prev" href="{PreviousPost}">{lang:Previous post}</a>{/block:PreviousPost}
+        {block:NextPost}<a class="next" href="{NextPost}">{lang:Next post}</a>{/block:NextPost}
+      </div>
     {/block:PermalinkPagination}
 
     {block:Pagination}
-    <div class="pagination">
-      {block:PreviousPage}<a class="prev" href="{PreviousPage}">{lang:Previous}</a>{/block:PreviousPage}
+      <div class="pagination">
+        {block:PreviousPage}<a class="prev" href="{PreviousPage}">{lang:Previous}</a>{/block:PreviousPage}
 
-      {block:JumpPagination length="5"}
-        {block:CurrentPage}<span class="current-page">{PageNumber}</span>{/block:CurrentPage}
-        {block:JumpPage}<a class="jump-page" href="{URL}">{PageNumber}</a>{/block:JumpPage}
-      {/block:JumpPagination}
+        {block:JumpPagination length="5"}
+          {block:CurrentPage}<span class="current-page">{PageNumber}</span>{/block:CurrentPage}
+          {block:JumpPage}<a class="jump-page" href="{URL}">{PageNumber}</a>{/block:JumpPage}
+        {/block:JumpPagination}
 
-      {block:NextPage}<a class="next" href="{NextPage}">{lang:Next}</a>{/block:NextPage}
-    </div>
+        {block:NextPage}<a class="next" href="{NextPage}">{lang:Next}</a>{/block:NextPage}
+      </div>
     {/block:Pagination}
   </section><!-- .b-content -->
 
